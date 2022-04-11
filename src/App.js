@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomeScreen from "./screens/HomeScreen";
+import Footer from "./components/footer/Footer";
+import AppScreen from "./screens/AppScreen";
+import WebsiteScreen from "./screens/WebsiteScreen";
+import AppDetailScreen from "./screens/AppDetailScreen";
+import WebsiteDetailScreen from "./screens/WebsiteDetailScreen";
 
 function App() {
+  // https://www.youtube.com/watch?v=s4JVGlPC5u0
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <main>
+          <Routes>
+            <Route path="/" element={<HomeScreen />} />
+            <Route path="/app" element={<AppScreen />} />
+            <Route path="/website" element={<WebsiteScreen />} />
+            <Route path="/apps/:id" element={<AppDetailScreen />} />
+            <Route path="/websites/:id" element={<WebsiteDetailScreen />} />
+          </Routes>
+        </main>
+
+        {/* Footer */}
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

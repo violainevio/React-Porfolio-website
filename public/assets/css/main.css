@@ -317,20 +317,20 @@ svg {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  flex-wrap: nowrap;
 }
-a.nav-item.nav-link {
-  background-color: red;
+a.nav-item.nav-link,
+li.nav-item {
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 3.2% 10.5%;
+  /* padding: 3.2% 10.5%; */
+  padding: 0;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
   font-size: 13px;
   background-color: #001517;
-  color: white;
-  text-transform: uppercase;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
@@ -338,11 +338,29 @@ a.nav-item.nav-link {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  /* border: 1px solid #fff; */
 }
-a.nav-item.nav-link:hover {
+
+.nav-link {
+  background-color: #001517;
+  color: white;
+  text-transform: uppercase;
+  padding: 15px 61px;
+}
+a.nav-item.nav-link:hover,
+li.nav-item:hover,
+.nav-link:hover {
+  border: none;
   background-color: #03393f;
 }
-a.nav-item.nav-link.active {
+a.nav-item.nav-link.active,
+li.nav-item:active,
+.nav-link .active {
+  background-color: #03393f;
+}
+.nav-tabs .nav-link.active {
+  color: #fff;
+  border: 1px solid #03393f;
   background-color: #03393f;
 }
 
@@ -350,6 +368,7 @@ a.nav-item.nav-link.active {
   width: 80%;
   margin-top: 5%;
   text-align: center;
+  margin: 5% auto;
 }
 
 .section .sectionBox {
@@ -701,6 +720,8 @@ form button:hover {
   border-radius: 5px;
   margin-top: 2%;
   background-color: #e49504;
+  box-shadow: inset -5px -5px 6px #805302, inset 5px 5px 6px #ffd706;
+  /* box-shadow: inset 5px 5px 6px #ffd706, inset -5px -5px 6px #805302; */
   -webkit-transition: 0.5s linear;
   -o-transition: 0.5s linear;
   transition: 0.5s linear;
@@ -710,11 +731,10 @@ form button:hover {
   font-weight: bold;
 }
 .overlay .container button:hover {
-  background-color: unset;
-  border: 2px solid #e49504;
-  -webkit-transition: 0.5s linear;
-  -o-transition: 0.5s linear;
-  transition: 0.5s linear;
+  /* background-color: unset; */
+  /* border: 2px solid #e49504; */
+  background-color: #e49504;
+  box-shadow: inset -5px -5px 6px #ffd706, inset 5px 5px 6px #805302;
 }
 .overlay .container p {
   padding-left: 15%;

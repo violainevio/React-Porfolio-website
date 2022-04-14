@@ -20,10 +20,7 @@ const Header = (props) => {
               <HashLink to="/#services">services</HashLink>
             </div>
             <div className="menu">
-              <HashLink to="/#blog">Blogs</HashLink>
-            </div>
-            <div className="menu">
-              <NavLink to="/portfolio">Portifolio</NavLink>
+              <NavLink to="/portfolio">Portfolio</NavLink>
             </div>
             <div className="menu">
               <HashLink to="/#contact">contact Me</HashLink>
